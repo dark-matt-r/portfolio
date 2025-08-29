@@ -393,8 +393,8 @@ h2 {
 
 /* Footer Styles */
 footer {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
+  background-color: var(--primary-color);
+  color: var(--on-primary);
   text-align: center;
   padding: 10px;
   position: relative;
