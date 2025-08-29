@@ -41,7 +41,7 @@ header {
 }
 
 /* Where the photos go. */
-.main-content {
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,8 +128,20 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #88fdf0;
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 20px;
+  padding: 5px 0;
+  color: #222;
+}
+
 @media only screen and (max-width: 600px) {
-  .main-content {
+  main {
     max-width: 90%;
   }
 }
