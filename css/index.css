@@ -15,9 +15,9 @@
   --primary-variant: #7b2cbfff;
   --secondary-color: #00ff00;
   --on-primary: rgb(250, 250, 250);
+  --background: rgb(255, 255, 255);
   --on-background: rgb(66, 66, 66);
   --on-background-alt: rgba(66, 66, 66, 0.7);
-  --background: rgb(255, 255, 255);
   --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
 
   /* Spacing */
@@ -32,6 +32,18 @@
   --breakpoint-laptop: 1024px; /* 769px — 1024px: Small screens, laptops */
   --breakpoint-desktop: 1200px; /* 1025px — 1200px: Desktops, large screens */
   --breakpoint-tv: 1201px; /* 1201px and more —  Extra large screens, TV */
+
+  /* h1 to h6 Information */
+  --h1-size: 3rem;
+  --h2-size: 2.5rem;
+  --h3-size: 2rem;
+  --h4-size: 1.5rem;
+  --h1-color: var(--primary-color);
+  --h2-color: var(--primary-color);
+  --h3-color: var(--primary-variant);
+  --h4-color: var(--primary-color);
+
+  /* Font Sizes */
 }
 
 /* Purple Color Palette from https://coolors.co/palette/10002b-240046-3c096c-5a189a-7b2cbf-9d4edd-c77dff-e0aaff */
@@ -177,6 +189,7 @@ body {
   color: var(--on-primary);
   font-size: 1rem;
   font-weight: bold;
+  text-decoration: none;
   position: relative;
   overflow: hidden;
 }
@@ -197,35 +210,129 @@ body {
 
 /* Main Content Styles */
 
-section {
+/* section {
   margin-top: var(--header-height);
   padding: var(--header-height) 0 0 0;
-}
+} */
 
 /* Hero Section Styles */
 #hero {
-  min-height: 100vh;
+  /* height: 100vh; */
+  /* margin: var(--spacing-jumbo) 0; */
+  /* padding: var(--spacing-jumbo); */
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-medium);
+  margin: auto;
+}
+
+/* .hero .hero-text {  max-width: 600px;} */
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-medium);
+  color: var(--h1-color);
+}
+
+.hero img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: var(--spacing-medium);
+  box-shadow: var(--box-shadow);
+}
+
+/* Projects Section Styles */
+#projects {
+  height: 100vh;
   margin: var(--spacing-jumbo) 0;
   padding: var(--spacing-jumbo);
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: var(--spacing-medium);
-  color: var(--primary-color);
+  color: var(--h2-color);
 }
 
-/* Projects Section Styles */
-#projects {
-  min-height: 100vh;
+.projects-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-medium);
+}
+
+.projects .project-card {
+  margin: var(--spacing-medium) 0;
+  padding: var(--spacing-medium);
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.projects .project-card .project-logo {
+  background-image: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--primary-variant)
+  );
+  font-size: 5rem;
+  margin-bottom: var(--spacing-medium);
+  color: var(--on-primary);
+  border-radius: 10px;
+}
+
+.projects .project-card a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: var(--spacing-medium);
+}
+
+.projects .project-card a:hover {
+  color: var(--secondary-color);
 }
 
 /* Components Section Styles */
 #components {
-  min-height: 100vh;
+  height: 100vh;
+  margin: var(--spacing-jumbo) 0;
+  padding: var(--spacing-jumbo);
 }
 
 /* Button Components Styles */
+
+.components h2 {
+  margin-bottom: var(--spacing-jumbo);
+  font-size: var(--h2-size);
+}
+
+.components .button-gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-medium);
+  flex-wrap: wrap;
+}
+
+.components h3 {
+  margin-bottom: var(--spacing-medium);
+  font-size: var(--h3-size);
+  color: var(--h3-color);
+}
 
 .button-1 {
   text-transform: uppercase;
@@ -391,13 +498,22 @@ h2 {
   }
 }
 
+/* Contact Section Styles */
+#contact {
+  height: 100vh;
+  margin: var(--spacing-jumbo) 0;
+  padding: var(--spacing-jumbo);
+}
+
 /* Footer Styles */
 footer {
   background-color: var(--primary-color);
   color: var(--on-primary);
   text-align: center;
   padding: 10px;
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
+  margin-top: var(--spacing-jumbo);
+  font-size: 2rem;
 }

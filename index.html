@@ -22,38 +22,50 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#components">Components</a></li>
         </ul>
-        <button class="header-navigation-contact">Contact</button>
+        <a class="header-navigation-contact" href="#contact">Contact</a>
       </nav>
     </header>
     <!-- Main Content Section -->
     <main>
       <!-- Hero Section -->
-      <section id="hero">
-        <h2>Dark MattR Studio Portfolio Page</h2>
-        <p>
-          Some people might think that one man who owns a computer and lives
-          with his parents does not count as a studio, but I beg to differ. At
-          Dark MattR Studios, we create all sorts of fun websites. This website
-          is designed with just a few examples.
-        </p>
+      <section id="hero" class="hero">
+        <div class="hero-text">
+          <h1>Dark MattR Studio Portfolio Page</h1>
+          <p>
+            Some people might think that one man who owns a computer and lives
+            with his parents does not count as a studio, but I beg to differ. At
+            Dark MattR Studios, we create all sorts of fun websites. This
+            website is designed with just a few examples.
+          </p>
+        </div>
         <img src="images/remove the backgroun.png" alt="" />
       </section>
       <!-- Projects Section -->
-      <section id="projects">
+      <section id="projects" class="projects">
         <h2>Projects</h2>
         <p>Here are some of my recent projects.</p>
-        <a href="infinite-scroll.html">Infinite Scroll Project</a>
-        <a href="quotable.html">Quotable Project</a>
+        <div class="projects-container">
+          <div class="project-card">
+            <div class="project-logo">♾</div>
+            <a href="infinite-scroll.html">Infinite Scroll Project</a>
+            <p>View Unspash images endlessly by scrolling downward.</p>
+          </div>
+          <div class="project-card">
+            <div class="project-logo">❝</div>
+            <a href="quotable.html">Quotable Project</a>
+            <p>View random quotes from famous people.</p>
+          </div>
+        </div>
       </section>
       <!-- Components Section -->
-      <section id="components">
+      <section id="components" class="components">
         <h2>Components</h2>
         <p>
           Here are just a few examples of some common components that many
           websites use.
         </p>
+        <h3>Buttons Gallery</h3>
         <div class="button-gallery">
-          <h3>Buttons Gallery</h3>
           <div class="button">
             <button class="button-1">hover me</button>
           </div>
@@ -68,9 +80,20 @@
           </div>
         </div>
       </section>
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>If you would like to contact me, please email me at:</p>
+        <p><a href="mailto:">Nothing yet!</a></p>
+      </section>
     </main>
     <footer>
+      <p>
+        This site is currently under construction, but please feel free to look
+        around while I fix it.
+      </p>
+      <!-- Footer Section
       <p>&copy; 2025 Dark MattR Studio</p>
-    </footer>
+    --></footer>
   </body>
 </html>
