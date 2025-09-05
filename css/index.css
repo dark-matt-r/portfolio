@@ -11,14 +11,23 @@
   --link-color: #ff9800;
   --primary-button-color: #00ff00;
 
-  --primary-color: #3c096cff;
-  --primary-variant: #7b2cbfff;
+  /* #195fb8 */
+  /* #39bff9 */
+  --primary-color: #195fb8;
+  --primary-variant: #39bff9;
   --secondary-color: #00ff00;
   --on-primary: rgb(250, 250, 250);
   --background: rgb(255, 255, 255);
   --on-background: rgb(66, 66, 66);
   --on-background-alt: rgba(66, 66, 66, 0.7);
   --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
+
+  /* Dark Mode Test */
+  /* --primary-color: #39bff9;
+  --primary-variant: #195fb8;
+  --on-primary: rgb(66, 66, 66);
+  --background: rgb(66, 66, 66);
+  --on-background: rgb(250, 250, 250); */
 
   /* Spacing */
   --spacing-small: 8px;
@@ -44,6 +53,16 @@
   --h4-color: var(--primary-color);
 
   /* Font Sizes */
+  --button-font-size: 2rem;
+  --footer-font-size: 2rem;
+
+  /* Button Variables */
+  --button-border-radius: 6px;
+  --button-padding: 1rem 2rem;
+  --button-font-weight: bold;
+  --button-text-transform: uppercase;
+
+  /* Footer Variables */
 }
 
 /* Purple Color Palette from https://coolors.co/palette/10002b-240046-3c096c-5a189a-7b2cbf-9d4edd-c77dff-e0aaff */
@@ -104,6 +123,7 @@ html {
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  background-color: black;
   background-color: var(--background);
   color: var(--on-background);
   max-width: var(--breakpoint-desktop);
@@ -118,11 +138,11 @@ body {
   background-color: rgb(255 255 255 / 50%);
 }
 
-/* header .logo {
+.header-navigation-logo {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-} */
+}
 
 .header-navigation {
   width: 100%;
@@ -218,8 +238,8 @@ body {
 /* Hero Section Styles */
 #hero {
   /* height: 100vh; */
-  /* margin: var(--spacing-jumbo) 0; */
-  /* padding: var(--spacing-jumbo); */
+  margin: var(--spacing-jumbo) 0;
+  padding: var(--spacing-jumbo);
 }
 
 .hero {
@@ -243,23 +263,29 @@ h1 {
 .hero img {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
+  border-radius: 10px;
+  /* object-fit: cover; */
   margin-top: var(--spacing-medium);
-  box-shadow: var(--box-shadow);
+  /* box-shadow: var(--box-shadow); */
 }
 
 /* Projects Section Styles */
 #projects {
-  height: 100vh;
-  margin: var(--spacing-jumbo) 0;
-  padding: var(--spacing-jumbo);
+  /* height: 100vh; */
+  /* margin: var(--spacing-medium) 0; */
+  padding: var(--spacing-large) var(--spacing-jumbo);
+  /* border: 1px solid var(--on-background-alt); */
 }
 
-h2 {
+.projects h2 {
   font-size: 2.5rem;
   margin-bottom: var(--spacing-medium);
   color: var(--h2-color);
+}
+
+.projects p {
+  margin-bottom: var(--spacing-medium);
+  color: var(--on-background);
 }
 
 .projects-container {
@@ -306,26 +332,21 @@ h2 {
 
 /* Components Section Styles */
 #components {
-  height: 100vh;
-  margin: var(--spacing-jumbo) 0;
-  padding: var(--spacing-jumbo);
+  /* height: 100vh; */
+  /* margin: var(--spacing-large) 0; */
+  padding: var(--spacing-large) var(--spacing-jumbo);
+  /* border: 1px solid var(--on-background-alt); */
 }
-
-/* Button Components Styles */
 
 .components h2 {
-  margin-bottom: var(--spacing-jumbo);
-  font-size: var(--h2-size);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-medium);
+  color: var(--h2-color);
 }
 
-.components .button-gallery {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  text-align: center;
-  gap: var(--spacing-medium);
-  flex-wrap: wrap;
+.components p {
+  margin-bottom: var(--spacing-medium);
+  color: var(--on-background);
 }
 
 .components h3 {
@@ -334,15 +355,34 @@ h2 {
   color: var(--h3-color);
 }
 
+.components .button-gallery,
+.components .loading-screen-gallery,
+.components .icons-gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-medium);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-large);
+}
+
+/* Components Button Styles */
+
+.button-gallery button {
+  cursor: pointer;
+  border: 5px solid var(--primary-color);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+  font-weight: var(--button-font-weight);
+  font-size: var(--button-font-size);
+  text-transform: var(--button-text-transform);
+}
+
 .button-1 {
-  text-transform: uppercase;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 6px;
-  background-color: var(--primary-button-color);
-  color: black;
-  font-size: 2rem;
-  font-weight: bold;
+  background-color: var(--primary-color);
+  color: var(--on-primary);
   position: relative;
   overflow: hidden;
 }
@@ -352,7 +392,7 @@ h2 {
   width: 100%;
   height: 30px;
   position: absolute;
-  background-color: white;
+  background-color: var(--on-primary);
   transform: translateX(-100%) rotate(-45deg);
   transition: transform 400ms;
 }
@@ -362,13 +402,8 @@ h2 {
 }
 
 .button-2 {
-  text-transform: uppercase;
-  padding: 1rem 2rem;
-  border: 3px solid black;
-  border-radius: 6px;
   background-color: transparent;
-  color: black;
-  font-size: 2rem;
+  color: var(--primary-color);
   position: relative;
   transition-property: color;
   transition-duration: 400ms;
@@ -377,7 +412,7 @@ h2 {
 }
 
 .button-2:hover {
-  color: white;
+  color: var(--on-primary);
 }
 
 .button-2::before {
@@ -390,7 +425,7 @@ h2 {
   transform: translate(-100%, -100%);
   transition-property: transform;
   transition-duration: 400ms;
-  background-color: #0ff;
+  background-color: var(--primary-variant);
   z-index: -1;
 }
 
@@ -408,7 +443,7 @@ h2 {
   transform: translate(100%, 100%);
   transition-property: transform;
   transition-duration: 400ms;
-  background-color: #f0f;
+  background-color: var(--primary-color);
   z-index: -1;
 }
 
@@ -417,30 +452,23 @@ h2 {
 }
 
 .button-3 {
-  text-transform: uppercase;
-  padding: 1rem 2rem;
-  border: 5px solid var(--primary-button-color);
-  border-radius: 6px;
-  background-color: black;
-  color: var(--primary-button-color);
-  font-size: 2rem;
+  background-color: transparent;
+  color: var(--primary-color);
   position: relative;
-  box-shadow: 0 0 2px var(--primary-button-color),
-    0 0 4px var(--primary-button-color), 0 0 8px var(--primary-button-color),
-    inset 0 0 2px var(--primary-button-color),
-    inset 0 0 4px var(--primary-button-color),
-    inset 0 0 8px var(--primary-button-color);
-  text-shadow: 0 0 2px var(--primary-button-color),
-    0 0 4px var(--primary-button-color), 0 0 8px var(--primary-button-color);
+  /* box-shadow: 0 0 2px var(--primary-color), 0 0 4px var(--primary-color),
+    0 0 8px var(--primary-color), inset 0 0 2px var(--primary-color),
+    inset 0 0 4px var(--primary-color), inset 0 0 8px var(--primary-color); */
+  /* text-shadow: 0 0 2px var(--primary-color), 0 0 4px var(--primary-color),
+    0 0 8px var(--primary-color); */
   transition: background-color 400ms, box-shadow 400ms, text-shadow 400ms;
 }
 
 .button-3:hover {
-  color: black;
-  background-color: var(--primary-button-color);
-  box-shadow: 0 0 2px var(--primary-button-color),
-    0 0 4px var(--primary-button-color), 0 0 8px var(--primary-button-color),
-    0 0 16px var(--primary-button-color), 0 0 32px var(--primary-button-color);
+  color: var(--on-primary);
+  background-color: var(--primary-color);
+  box-shadow: 0 0 2px var(--primary-color), 0 0 4px var(--primary-color),
+    0 0 8px var(--primary-color), 0 0 16px var(--primary-color),
+    0 0 32px var(--primary-color);
 
   /* text-shadow: 0 0 2px black, 0 0 4px black, 0 0 8px black; */
 }
@@ -452,10 +480,10 @@ h2 {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: var(--primary-button-color);
+  background-color: var(--primary-color);
   transform: perspective(5rem) rotateX(45deg);
   filter: blur(1rem);
-  opacity: 0.1;
+  opacity: 0;
 }
 
 .button-3:hover::after {
@@ -463,12 +491,8 @@ h2 {
 }
 
 .button-4 {
-  text-transform: uppercase;
-  padding: 1rem 2rem;
-  border: 5px solid purple;
-  border-radius: 10px;
-  color: purple;
-  font-size: 2rem;
+  color: var(--primary-color);
+  background-color: transparent;
   position: relative;
 }
 
@@ -477,7 +501,7 @@ h2 {
   left: 0;
   top: 0;
   display: inline-block;
-  color: purple;
+  color: var(--primary-color);
   font-size: 2rem;
   transition: all 0.3s ease;
 }
@@ -500,9 +524,10 @@ h2 {
 
 /* Contact Section Styles */
 #contact {
-  height: 100vh;
-  margin: var(--spacing-jumbo) 0;
-  padding: var(--spacing-jumbo);
+  padding: var(--spacing-large) var(--spacing-jumbo);
+  /* height: 100vh; */
+  /* margin: var(--spacing-jumbo) 0; */
+  /* padding: var(--spacing-jumbo); */
 }
 
 /* Footer Styles */
@@ -515,5 +540,5 @@ footer {
   bottom: 0;
   width: 100%;
   margin-top: var(--spacing-jumbo);
-  font-size: 2rem;
+  font-size: var(--footer-font-size);
 }
