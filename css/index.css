@@ -381,6 +381,10 @@ body {
   color: var(--primary-color);
 }
 
+.hero-contact-button:hover a {
+  color: var(--on-primary);
+}
+
 /* Projects Section Styles */
 #projects {
   /* height: 100vh; */
