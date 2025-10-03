@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap");
+
 :root {
   /* Header Variables */
   --header-color: #121212;
@@ -26,6 +31,9 @@
   --breakpoint-laptop: 1024px; /* 769px — 1024px: Small screens, laptops */
   --breakpoint-desktop: 1200px; /* 1025px — 1200px: Desktops, large screens */
   --breakpoint-tv: 1201px; /* 1201px and more —  Extra large screens, TV */
+
+  /* z-index Information */
+  --navbar-z-index: 100;
 
   /* h1 to h6 Information */
   --h1-size: 3rem;
@@ -103,14 +111,22 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 body {
   font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
+  /* font-family: "Times New Roman", Times, serif; */
   line-height: 1.6;
   background-color: var(--background);
   color: var(--on-background);
   max-width: var(--breakpoint-desktop);
+}
+
+#top-header {
+  z-index: var(--navbar-z-index);
 }
 
 .top-header {
@@ -245,6 +261,10 @@ body {
 
 .hero h1 {
   font-size: 3rem;
+  /* font-family: "Press Start 2P", system-ui; */
+  font-family: "Audiowide", sans-serif;
+  /* font-family: "Comic Relief", system-ui; */
+  /* font-style: italic; */
   /* margin-bottom: var(--spacing-medium); */
   color: var(--h1-color);
   margin: 0 0 var(--spacing-medium) 0;
@@ -276,7 +296,8 @@ body {
   color: var(--primary-color);
   font-size: 2rem;
   position: relative;
-  overflow: hidden;
+  text-decoration: none;
+  /* overflow: hidden; */
   transition-property: color, background-color, box-shadow;
   transition-duration: 400ms;
   overflow: hidden;
@@ -378,6 +399,7 @@ body {
 
 .hero-contact-button a {
   text-decoration: none;
+  font-weight: bold;
   color: var(--primary-color);
 }
 
@@ -397,6 +419,7 @@ body {
   font-size: 2.5rem;
   margin-bottom: var(--spacing-medium);
   color: var(--h2-color);
+  font-family: "Audiowide", sans-serif;
 }
 
 .projects p {
@@ -459,6 +482,7 @@ body {
   font-size: 2.5rem;
   margin-bottom: var(--spacing-medium);
   color: var(--h2-color);
+  font-family: "Audiowide", sans-serif;
 }
 
 .components p {
@@ -470,6 +494,7 @@ body {
   margin-bottom: var(--spacing-medium);
   font-size: var(--h3-size);
   color: var(--h3-color);
+  font-family: "Audiowide", sans-serif;
 }
 
 .components .button-gallery,
@@ -525,7 +550,7 @@ body {
   transition-property: color;
   transition-duration: 400ms;
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
 }
 
 .button-2:hover {
@@ -764,23 +789,26 @@ body {
   color: var(--on-background);
   /* background-color: var(--background); */
   font-size: 1.5rem;
-  z-index: 100;
+  z-index: 1;
 }
 
 .loading-screen-2 {
   position: relative;
-  width: 200px;
-  height: 200px;
+  /* width: 200px;
+  height: 200px; */
   width: var(--loading-screen-width);
   height: var(--loading-screen-height);
   font-size: 2rem;
+  font-weight: bold;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: var(--on-background);
+  /* color: var(--on-background); */
+  color: white;
   background-color: var(--background);
-  text-shadow: 1px 1px 2px pink;
+  text-shadow: 0px 0px 4px var(--primary-color),
+    0px 0px 8px var(--primary-color), 0px 0px 16px var(--primary-color);
   overflow: hidden;
 }
 
@@ -789,16 +817,18 @@ body {
   content: "";
   position: absolute;
   width: 12px;
-  height: 4rem;
+  height: 6rem;
   left: 0%;
   top: 50%;
   transform: translate(0%, -50%);
-  background-color: var(--primary-color);
+  /* background-color: var(--on-background); */
+  background-color: white;
   border-radius: 10px;
-  /* box-shadow: var(--box-shadow); */
+  box-shadow: 0px 0px 4px var(--primary-color), 0px 0px 8px var(--primary-color),
+    0px 0px 16px var(--primary-color);
   transform-origin: top center;
   animation: move-bar 5000ms linear infinite;
-  z-index: 10;
+  z-index: 2;
 }
 
 @keyframes move-bar {
@@ -912,7 +942,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(40, 0, 0);
+  background-color: var(--background);
 }
 
 .symbol-screen-1 img {
@@ -1008,7 +1038,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(40, 0, 0);
+  background-color: var(--background);
 }
 
 .symbol-screen-2 img {
@@ -1075,19 +1105,22 @@ body {
 }
 
 /* Contact Section Styles */
+
 #contact {
   padding: var(--spacing-large) var(--spacing-jumbo);
+  /* The following line is only here while the site is under construction. */
   margin: var(--spacing-jumbo) 0 calc(3 * var(--spacing-jumbo)) 0;
   /* padding: var(--spacing-jumbo); */
 }
 
-.contact {
+.contact-form {
   width: 80%;
   margin: var(--spacing-medium) 0;
   padding: var(--spacing-medium);
   /* box-shadow: var(--box-shadow); */
-  color: white;
-  background-color: var(--primary-color);
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: var(--background);
   border-radius: 10px;
   box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
     10px 10px 70px rgba(0, 0, 0, 0.25),
@@ -1097,10 +1130,12 @@ body {
   /* width: 300px; */
 }
 
-.contact h2 {
+.contact-form h2 {
   font-size: 2.5rem;
+  text-align: center;
   margin-bottom: var(--spacing-medium);
-  color: white;
+  color: var(--h2-color);
+  font-family: "Audiowide", sans-serif;
 }
 
 input,
@@ -1118,16 +1153,48 @@ textarea {
   width: 100%;
 }
 
-.contact-form .form-group input {
-  display: block;
-  width: 100%;
-  border-radius: var(--button-border-radius);
-}
-
+.contact-form .form-group input,
 .contact-form .form-group textarea {
   display: block;
   width: 100%;
   border-radius: var(--button-border-radius);
+  border: none;
+  box-shadow: inset 2px 2px 10px rgba(255, 255, 255, 0.25),
+    inset -2px -2px 8px rgba(0, 0, 0, 0.75);
+}
+
+/* .contact-form .form-group textarea {
+  display: block;
+  width: 100%;
+  border-radius: var(--button-border-radius);
+} */
+
+.contact-form .contact-form-button {
+  font-size: 2rem;
+  font-weight: bold;
+  /* text-shadow: 1px 1px 0 black; */
+  color: var(--background);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  /* background: linear-gradient(white, darkgray); */
+  /* box-shadow: inset 0 6px 1px 0 rgba(0, 0, 0, 0.35),
+    0 5px 5px rgba(0, 0, 0, 0.5),
+   0 15px 25px rgba(0, 0, 0, 0.35);  */
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.25),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75), 0 0 10px var(--on-background);
+  margin: var(--spacing-large) 0;
+}
+
+.contact-form .contact-form-button:hover {
+  cursor: pointer;
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.25),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75), 0 0 30px var(--on-background);
 }
 
 /* Footer Styles */
