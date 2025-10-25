@@ -6,13 +6,15 @@
 
 .hero-home-button {
   margin: 0 auto var(--spacing-medium) auto;
-  max-width: 400px;
+  /* max-width: 400px; */
   /* height: 200px; */
+  width: 60%;
   text-transform: uppercase;
   padding: 1rem 2rem;
-  border-radius: 6px;
+  border-radius: 10px;
   /* background-color: transparent; */
   color: var(--background);
+  color: greenyellow;
   font-size: 2rem;
   position: relative;
   text-decoration: none;
@@ -25,26 +27,67 @@
     var(--primary-color),
     var(--primary-variant),
     var(--secondary-color),
-    var(--primary-color),
     var(--primary-variant),
-    var(--secondary-color)
+    var(--primary-color)
   );
+  background-size: 400%;
+  animation-name: rove;
+  animation-duration: 10000ms;
+  animation-iteration-count: infinite;
 }
 
+.hero-home-button:hover {
+  animation-name: rove;
+  animation-duration: 10000ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rove {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 400%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+/* 
 .hero-home-button:active {
   box-shadow: 0 0px 0 #ffffff;
   transform: translateY(4px);
-}
+} */
 
 .hero-home-button::before {
-  content: "";
-  /* width: 100%; */
-  /* height: 100%; */
+  content: "Go Back Home";
+  height: 80%;
+  width: 80%;
   position: absolute;
-  top: 1px;
-  right: 10px;
-  bottom: 10px;
-  left: 10px;
-  background-color: black;
-  /* display: block; */
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  border-radius: 10px;
+  background-color: var(--background);
+  /* background-color: transparent; */
+  color: transparent;
+}
+
+#hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#hero .hero-image {
+  /* object-fit: cover; */
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#hero .hero-home-button {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
