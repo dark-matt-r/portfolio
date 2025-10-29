@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="js/index.js" defer></script>
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/success-message.css">
+    <!-- <link rel="stylesheet" href="css/index.css" /> -->
+    <link rel="stylesheet" href="css/success-message.css" />
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Dark MattR Studio Portfolio Page</title>
-    <style>
-    </style>
+    <style></style>
   </head>
   <body>
     <!-- Navigation Section -->
@@ -23,28 +25,42 @@
             alt="Dark MattR company logo."
           />
         </a>
-        <a class="header-navigation-contact" href="https://dark-matt-r.github.io/portfolio/">Contact</a>
+        <!-- <ul class="header-navigation-links">
+          <li><a href="#hero">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#components">Components</a></li>
+        </ul> -->
+        <a class="header-navigation-contact" href="#contact">Contact</a>
+        <div class="hamburger-button">
+          <div class="hamburger-button-bar"></div>
+          <div class="hamburger-button-bar"></div>
+          <div class="hamburger-button-bar"></div>
+        </div>
+        <ul class="header-navigation-links-mobile">
+          <!-- <li><a href="#hero">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#components">Components</a></li>
+          <li><a href="#contact">Contact Me</a></li> -->
+          <li id="color-theme-button-mobile">Dark Mode</li>
+        </ul>
       </nav>
     </header>
+
     <!-- Main Content Section -->
     <main>
-      <section>
       <!-- Hero Section -->
       <section id="hero" class="hero">
         <div class="hero-text">
           <h1>Thank You!</h1>
-          <p>
-            I will get back to you ASAP. I really appreciate your business!
-          </p>
+          <p>I will get back to you ASAP. I really appreciate your business!</p>
         </div>
-        <img src="images/big-thumbs-up.png" alt="" class="hero-image">
-        <!-- <div> -->
-          <a href="index.html" class="hero-home-button">
-            <span>
-              Go Back Home
-            </span>
-          </a>
-        <!-- </div> -->
+        <img src="images/big-thumbs-up.png" alt="" class="hero-image" />
+
+        <a class="hero-home-button">
+          <!-- <a href="index.html"> -->
+          <span> Go Back to the Homepage </span>
+          <!-- </a> -->
+        </a>
       </section>
 
       <!-- Dark/Light Colour Theme Button -->
@@ -53,17 +69,13 @@
         class="color-theme-button"
         aria-label="Toggle Dark Mode"
       >
-        <img src="images/Designer (6).ico" id="sun-icon" alt="" />
-        <img src="images/Designer (8).ico" id="moon-icon" alt="" />
+        <img src="images/blue-sun.ico" id="sun-icon" alt="" />
+        <img src="images/blue-moon.ico" id="moon-icon" alt="" />
       </button>
     </main>
+    <!-- Footer Section-->
     <footer>
-      <p>
-        This site is currently under construction, but please feel free to look
-        around while I fix it.
-      </p>
-      <!-- Footer Section
       <p>&copy; 2025 Dark MattR Studio</p>
-    --></footer>
+    </footer>
   </body>
 </html>

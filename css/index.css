@@ -652,6 +652,43 @@ body {
   }
 }
 
+.button-5 {
+  background-image: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--primary-variant),
+    var(--secondary-color),
+    var(--primary-color),
+    var(--primary-variant),
+    var(--secondary-color),
+    var(--primary-variant),
+    var(--primary-color)
+  );
+  background-size: 400%;
+  animation-name: rove;
+  animation-duration: 10000ms;
+  animation-iteration-count: infinite;
+  /* animation-direction: alternate; */
+}
+
+@keyframes rove {
+  0% {
+    background-position: top left;
+  }
+  25% {
+    background-position: top right;
+  }
+  50% {
+    background-position: bottom right;
+  }
+  75% {
+    background-position: bottom left;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
 /* Dark/Light Mode Colour Theme Button Styles */
 .color-theme-button {
   position: fixed;
@@ -1450,6 +1487,19 @@ main {
     transition-property: transform;
     transition-duration: 400ms;
   }
+
+  /* .header-navigation .header-navigation-links-mobile {
+    position: relative;
+    height: 300px;
+    background-color: rgb(255 255 255 / 90%);
+    background-color: var(--header-color);
+    z-index: var(--mobile-drawer-z-index);
+    box-shadow: var(--box-shadow);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transform: translateY(-100%);
+  } */
+
   .header-navigation .move-drawer {
     transform: translateY(0%);
   }
