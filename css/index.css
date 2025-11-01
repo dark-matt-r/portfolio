@@ -304,13 +304,12 @@ body {
 
 .hero .hero-contact-button {
   margin: 0 auto 0 auto;
-  /* margin: 0 auto var(--spacing-medium) auto; */
   width: 80%;
   grid-column-start: 1;
   grid-column-end: 3;
-}
+  /* }
 
-.hero .hero-contact-button {
+.hero .hero-contact-button { */
   text-transform: uppercase;
   padding: 1rem 2rem;
   border-radius: 6px;

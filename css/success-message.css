@@ -88,6 +88,7 @@ html {
 }
 
 body {
+  position: relative;
   font-family: "Roboto", sans-serif;
   line-height: 1.6;
   background-color: var(--background);
@@ -237,40 +238,58 @@ main {
   width: 100%;
 }
 
-/* These styles contain the spacing between sections */
-/* #hero {
-  padding: var(--spacing-jumbo) var(--spacing-jumbo);
-} */
+.main-container {
+  width: 80%;
+  max-width: var(--breakpoint-desktop);
+}
 
-/* The real hero section. */
-
+/* The hero section. */
 #hero.hero {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  padding: var(--spacing-jumbo) var(--spacing-jumbo);
+  margin: var(--spacing-jumbo) auto 0 auto;
+  text-align: center;
+  gap: var(--spacing-large);
 }
 #hero.hero .hero-text {
   grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-end: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+#hero.hero h1 {
+  font-size: 3rem;
+  font-family: "Audiowide", sans-serif;
+  color: var(--h1-color);
+  margin: 0 0 var(--spacing-medium) 0;
+}
+
+#hero.hero p {
+  margin: 0 0 var(--spacing-medium) 0;
+}
+
 #hero.hero .hero-image {
   max-width: 100%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
-  grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 
 #hero.hero .hero-home-button {
   position: relative;
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 4;
   margin: 0 auto;
   width: 80%;
   text-transform: uppercase;
   padding: 1rem 2rem;
   border-radius: 10px;
-  color: var(--background);
+  /* color: var(--background); */
+  color: transparent;
   font-size: 2rem;
   text-decoration: none;
   background-image: linear-gradient(
@@ -329,8 +348,36 @@ main {
   display: none;
 }
 
+/* Dark/Light Mode Colour Theme Button Styles */
+.color-theme-button {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: var(--on-primary);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 300ms, color 300ms;
+}
+
+.color-theme-button img {
+  width: 24px;
+  height: 24px;
+}
+
 /* Footer Styles */
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   background-color: var(--primary-color);
   color: var(--on-primary);
   text-align: center;
@@ -365,27 +412,6 @@ footer {
   .hero h1 {
     font-size: 2rem;
   }
-}
-
-/* The hero section breaks again at 650px. */
-@media screen and (max-width: 650px) {
-  /* .hero {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .hero .hero-text {
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero img {
-    display: none;
-  }
-  .hero .hero-contact-button {
-    grid-column-start: 1;
-    grid-column-end: 2;
-  } */
 }
 
 /* THE HAMBURGER GOES HERE!!! */
@@ -465,6 +491,31 @@ footer {
 
   .header-navigation .move-drawer {
     transform: translateY(0%);
+  }
+}
+
+/* The hero section breaks again at 650px. */
+@media screen and (max-width: 600px) {
+  #hero.hero {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #hero.hero .hero-text {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #hero.hero .hero-text h1 {
+    font-size: 2rem;
+  }
+  #hero.hero .hero-image {
+    display: none;
+  }
+  #hero.hero .hero-home-button {
+    grid-column-start: 1;
+    grid-column-end: 2;
   }
 }
 
