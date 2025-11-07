@@ -236,6 +236,9 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  padding: var(--spacing-jumbo) var(--spacing-jumbo)
+    calc(var(--spacing-jumbo) * 2) var(--spacing-jumbo);
 }
 
 .main-container {
@@ -247,7 +250,8 @@ main {
 #hero.hero {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: var(--spacing-jumbo) var(--spacing-jumbo);
+  /* padding: var(--spacing-jumbo) var(--spacing-jumbo); */
+  /* calc(var(--spacing-jumbo) * 2) var(--spacing-jumbo); */
   margin: var(--spacing-jumbo) auto 0 auto;
   text-align: center;
   gap: var(--spacing-large);
@@ -300,10 +304,15 @@ main {
     var(--primary-variant),
     var(--primary-color)
   );
+  /* background-clip: text; */
   background-size: 400%;
   animation-name: rove;
   animation-duration: 10000ms;
   animation-iteration-count: infinite;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-home-button:hover {
@@ -326,20 +335,55 @@ main {
 }
 
 .hero-home-button::before {
-  content: "Go Back Home";
+  content: "";
   height: 80%;
   width: 80%;
   position: absolute;
-  top: 10%;
+  /* top: 10%;
   right: 10%;
   bottom: 10%;
-  left: 10%;
+  left: 10%; */
   border-radius: 10px;
   background-color: var(--background);
   color: var(--on-background);
+  /* color: rgba(0, 0, 0, 0.25); */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#hero.hero .hero-home-button::after {
+  content: "Return to the homepage";
+  position: absolute;
+  width: 80%;
+  /* height: 80%; */
+  /* transform: translateX(50%); */
+  /* position: relative; */
+  /* grid-column-start: 1; */
+  /* grid-column-end: 4; */
+  /* margin: 0 auto; */
+  /* width: 80%; */
+  text-transform: uppercase;
+  font-weight: bold;
+  /* padding: 1rem 2rem;
+  border-radius: 10px; */
+  /* color: var(--background); */
+  color: transparent;
+  font-size: 2rem;
+  text-decoration: none;
+  background-image: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--primary-variant),
+    var(--secondary-color),
+    var(--primary-variant),
+    var(--primary-color)
+  );
+  background-clip: text;
+  background-size: 400%;
+  animation-name: rove;
+  animation-duration: 10000ms;
+  animation-iteration-count: infinite;
 }
 
 /*  */
@@ -357,8 +401,8 @@ main {
   color: var(--on-primary);
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   font-size: 1.5rem;
   cursor: pointer;
   box-shadow: var(--box-shadow);
@@ -366,11 +410,18 @@ main {
   justify-content: center;
   align-items: center;
   transition: background-color 300ms, color 300ms;
+
+  background-color: var(--background);
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.25),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+  z-index: var(--navbar-z-index);
 }
 
 .color-theme-button img {
-  width: 24px;
-  height: 24px;
+  width: 48px;
+  height: 48px;
 }
 
 /* Footer Styles */
